@@ -12,7 +12,15 @@ RUS_LETTERS_LOWER = letter_range("а", "я")
 ALL_LETTERS = [ENG_LETTERS_UPPER, ENG_LETTERS_LOWER, RUS_LETTERS_UPPER, RUS_LETTERS_LOWER]
 
 
-def shift(ch: str, shift_amount: int):
+def get_index(ch: str) -> int:
+    for letters in ALL_LETTERS:
+        index = letters.find(ch)
+        if index != -1:
+            return index
+    return -1
+
+
+def shift(ch: str, shift_amount: int) -> str:
     for letters in ALL_LETTERS:
         index = letters.find(ch)
         if index != -1:
@@ -20,11 +28,3 @@ def shift(ch: str, shift_amount: int):
             new_ch = letters[new_index]
             return new_ch
     return ch
-
-
-def encode(text: str) -> str:
-    return "".join(shift(ch, 3) for ch in text)
-
-
-def decode(text: str) -> str:
-    return "".join(shift(ch, -3) for ch in text)
