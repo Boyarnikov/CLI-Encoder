@@ -21,26 +21,3 @@ class Replacer(BaseEncoder):
 
 
 
-
-    # Ниже версия чуть интереснее, но пока безуспешная. Мб доработаю
-
-    # def encode(self, text: str) -> str:
-    #      if self._key in text:
-    #         raise AttributeError(f'Передаваемый текст содержит внутри себя ключ. Замените ключ')
-    #     fst = [a for i, a in enumerate(text) if i % 2 == 0]
-    #     snd = [a for i, a in enumerate(text) if i % 2 == 1]
-    #     return self._key.join(fst + snd)
-    #
-    # def decode(self, text: str) -> str:
-    #     text = text.replace(self._key, '', len(text))
-    #     if len(text) % 2 != 0:
-    #         tl = [a for a in text[0:int(len(text) / 2) + 1]]
-    #         sl = [b for b in text[int(len(text) / 2) + 1::]]
-    #     else:
-    #         tl = [a for a in text[0:int(len(text) / 2)]]
-    #         sl = [b for b in text[int(len(text) / 2)::]]
-    #     cnt = 1
-    #     for elem in sl:
-    #         tl.insert(sl.index(elem) + cnt, sl[sl.index(elem)])
-    #         cnt += 1
-    #     return ''.join(tl)
