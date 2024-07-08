@@ -1,5 +1,5 @@
-from common import shift
-from base_encoder import BaseEncoder
+from .common import shift
+from .base_encoder import BaseEncoder
 
 
 class Caesar(BaseEncoder):

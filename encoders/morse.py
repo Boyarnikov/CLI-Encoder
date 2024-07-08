@@ -1,4 +1,5 @@
-from base_encoder import BaseEncoder
+from .base_encoder import BaseEncoder
+
 
 class Morse(BaseEncoder):
     # Словарь для кодирования символов в азбуке Морзе
@@ -10,6 +11,9 @@ class Morse(BaseEncoder):
         '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
         '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
     }
+
+    def __init__(self):
+        super().__init__(None)
 
     # Шифратор азбуки Морзе
     def encode(self, message):

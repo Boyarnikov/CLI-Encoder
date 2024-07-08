@@ -1,5 +1,5 @@
-from encoders.caesar import Caesar
+import encoders
 
-v = Caesar(5)
+v = encoders.morse.Morse()
 v.encode_to_file(input(), "MY_SECRET.txt")
-v.decode_from_file("MY_SECRET.txt")
+print(v.decode_from_file("MY_SECRET.txt"))

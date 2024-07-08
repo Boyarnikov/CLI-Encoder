@@ -1,5 +1,5 @@
-from common import shift, get_index
-from base_encoder import BaseEncoder
+from .common import shift, get_index
+from .base_encoder import BaseEncoder
 
 
 class Vigenere(BaseEncoder):
