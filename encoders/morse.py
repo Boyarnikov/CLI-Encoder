@@ -12,7 +12,7 @@ class Morse(BaseEncoder):
         '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
     }
 
-    def __init__(self):
+    def __init__(self, key=None):
         super().__init__(None)
 
     # Шифратор азбуки Морзе
