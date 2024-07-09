@@ -1,3 +1,5 @@
+from base_encoder import BaseEncoder
+
 class BinaryEncoder(BaseEncoder):
     def encode(self, text: str):
         return ' '.join(format(ord(char), '08b') for char in text)
