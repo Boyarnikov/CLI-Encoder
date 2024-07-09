@@ -1,6 +1,9 @@
 from base_encoder import BaseEncoder
 
 class BinaryEncoder(BaseEncoder):
+    def __init__(self, _key):
+        super().__init__(_key)
+
     def encode(self, text: str):
         return ' '.join(format(ord(char), '08b') for char in text)
 
@@ -8,7 +11,7 @@ class BinaryEncoder(BaseEncoder):
         return ''.join(chr(int(char, 2)) for char in text.split())
 
 # Создаем экземпляр класса BinaryEncoder
-binary_encoder = BinaryEncoder()
+binary_encoder = BinaryEncoder(123)
 
 # Ввод текста для шифрования
 original_text = input("Введите текст для шифрования: ")
