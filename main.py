@@ -1,3 +1,13 @@
+import encoders
+
+#v = encoders.vigenere.Vigenere("fog")
+#v.encode_to_file(input(), "MY_SECRET.txt")
+#print(v.decode_from_file("MY_SECRET.txt"))
+
+v=encoders.atbash.Atbash()
+v.encode_to_file(input(), "MY_SECRET.txt")
+print(v.decode_from_file("MY_SECRET.txt"))
+
 try:
     1/int(input())
     print("Поделилось!")
