@@ -1,3 +1,6 @@
+from .common import shift
+from .base_encoder import BaseEncoder
+
 def atbash_cipher(text, language='english'):
     result = ""
     if language == 'english':
